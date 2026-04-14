@@ -71,9 +71,16 @@ export default function Hero() {
                 <span className="kw">from</span> blebutton{" "}
                 <span className="kw">import</span> BLEButton
               </span>
+              <span className="line">
+                <span className="kw">from</span> openclaw{" "}
+                <span className="kw">import</span> OpenClawClient
+              </span>
               <span className="line">&nbsp;</span>
               <span className="line">
                 button = <span className="fn">BLEButton</span>()
+              </span>
+              <span className="line">
+                claw = <span className="fn">OpenClawClient</span>()
               </span>
               <span className="line">&nbsp;</span>
               <span className="line">
@@ -84,8 +91,8 @@ export default function Hero() {
                 <span className="fn">handle</span>(event):
               </span>
               <span className="line">
-                &nbsp;&nbsp;&nbsp;&nbsp;openclaw.
-                <span className="fn">send</span>(
+                &nbsp;&nbsp;&nbsp;&nbsp;claw.
+                <span className="fn">send_prompt</span>(
                 <span className="str">&quot;Start morning briefing&quot;</span>)
               </span>
               <span className="line">&nbsp;</span>
