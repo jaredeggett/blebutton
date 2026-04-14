@@ -12,29 +12,31 @@ export default function Founder() {
           <div className="founder-info">
             <h3>Jared Eggett</h3>
             <span className="founder-role">
-              CEO, Ad Hoc Electronics / ILLUMRA
+              Founder, Ad Hoc Electronics
             </span>
             <p>
-              I&apos;ve spent 20+ years manufacturing kinetic energy-harvesting
-              switches for commercial lighting, shipping worldwide through
-              Hafele distribution with multiple utility patents. BLEButton
-              takes that proven EBELONG technology and puts it in the hands of
-              developers. No batteries to replace. No cloud to depend on. Just
-              a physical trigger that speaks BLE and lets your code do the
-              rest.
+              I&apos;ve always dreamed of being an inventor. That dream led me
+              to spend 20+ years in hardware manufacturing, building
+              kinetic energy-harvesting switches and earning multiple
+              utility patents along the way. BLEButton is the product
+              I&apos;ve wanted to build my entire career &mdash; taking
+              proven self-powered technology and putting it directly in
+              the hands of developers. No batteries to replace. No cloud
+              to depend on. Just a physical trigger that speaks BLE and
+              lets your code do the rest.
             </p>
             <div className="founder-stats">
               <div className="founder-stat">
                 <div className="founder-stat-val">20+</div>
-                <div className="founder-stat-lbl">Years Manufacturing</div>
-              </div>
-              <div className="founder-stat">
-                <div className="founder-stat-val">Global</div>
-                <div className="founder-stat-lbl">Distribution (Hafele)</div>
+                <div className="founder-stat-lbl">Years in Hardware</div>
               </div>
               <div className="founder-stat">
                 <div className="founder-stat-val">Multiple</div>
                 <div className="founder-stat-lbl">Utility Patents</div>
+              </div>
+              <div className="founder-stat">
+                <div className="founder-stat-val">Global</div>
+                <div className="founder-stat-lbl">Distribution</div>
               </div>
             </div>
           </div>
