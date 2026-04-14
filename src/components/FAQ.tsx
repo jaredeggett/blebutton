@@ -10,7 +10,7 @@ type FAQItem = {
 const faqs: FAQItem[] = [
   {
     q: "How does it work without a battery?",
-    a: "Each press compresses a spring-loaded electromagnetic generator inside the button. That mechanical energy is converted into enough electrical energy to power a BLE 5.0 radio and broadcast a single advertisement packet. This is the same core technology (EBELONG/ILLUMRA) that has powered millions of commercial kinetic light switches worldwide for over 20 years. The mechanism is rated for 500,000+ presses.",
+    a: "Each press compresses a spring-loaded electromagnetic generator inside the button. That mechanical energy is converted into enough electrical energy to power a BLE 5.0 radio and broadcast a single advertisement packet. This is the same proven kinetic energy-harvesting technology that has powered millions of commercial wireless light switches worldwide for over 20 years. The mechanism is rated for 500,000+ presses.",
   },
   {
     q: "What devices can receive the signal?",
@@ -30,11 +30,11 @@ const faqs: FAQItem[] = [
   },
   {
     q: "How does this work with OpenClaw/NemoClaw?",
-    a: "BLEButton is the first physical trigger built for NVIDIA's OpenClaw robotic manipulation framework. Press the button and your Jetson sends a natural language prompt to the NemoClaw model, which plans and executes the robotic action. The Python SDK handles BLE scanning, event parsing, and OpenClaw integration. Three lines of code from button press to robot movement.",
+    a: "BLEButton is the first physical trigger built for NVIDIA\u2019s OpenClaw robotic manipulation framework. Press the button and your Jetson sends a natural language prompt to the NemoClaw model, which plans and executes the robotic action. The Python SDK handles BLE scanning, event parsing, and OpenClaw integration. Three lines of code from button press to robot movement.",
   },
   {
     q: "When does it ship?",
-    a: "We are targeting Q3 2026 for initial shipments. The kinetic switch mechanism is proven manufacturing (20+ years of EBELONG production). The BLE radio design is finalized. We are currently in tooling and certification. Backers will receive regular production updates throughout the campaign.",
+    a: "We are targeting Q3 2026 for initial shipments. The kinetic switch mechanism is proven manufacturing with over 20 years of production history. The BLE radio design is finalized. We are currently in tooling and certification. Backers will receive regular production updates throughout the campaign.",
   },
   {
     q: "Can I use multiple buttons?",
@@ -50,22 +50,18 @@ export default function FAQ() {
   }
 
   return (
-    <section
-      className="section"
-      id="faq"
-      style={{ background: "var(--bg-card)" }}
-    >
+    <section className="section" id="faq">
       <div className="container">
         <span className="section-label fade-in">FAQ</span>
         <h2 className="section-title fade-in">Common questions.</h2>
 
-        <div className="faq-list">
+        <div className="faq-list fade-in">
           {faqs.map((item, i) => {
             const isOpen = openIndex === i;
             return (
               <div
                 key={i}
-                className={`faq-item fade-in${isOpen ? " open" : ""}`}
+                className={`faq-item${isOpen ? " open" : ""}`}
               >
                 <button
                   className="faq-question"
