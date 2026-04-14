@@ -16,7 +16,7 @@ function JetsonCode() {
   return (
     <pre>
       <span className="kw">from</span> blebutton <span className="kw">import</span> BLEButton{"\n"}
-      <span className="kw">from</span> nemoclaw <span className="kw">import</span> OpenClawClient{"\n"}
+      <span className="kw">from</span> openclaw <span className="kw">import</span> OpenClawClient{"\n"}
       {"\n"}
       button = <span className="fn">BLEButton</span>(){"\n"}
       claw   = <span className="fn">OpenClawClient</span>(){"\n"}
