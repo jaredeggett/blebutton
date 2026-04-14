@@ -5,11 +5,30 @@ import { useState } from "react";
 export default function EmailCapture() {
   const [email, setEmail] = useState("");
   const [confirmed, setConfirmed] = useState("");
+  const [submitting, setSubmitting] = useState(false);
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setConfirmed(`Got it. We will notify ${email} at launch.`);
-    setEmail("");
+    setSubmitting(true);
+
+    try {
+      const res = await fetch("https://formspree.io/f/mgondnab", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      if (res.ok) {
+        setConfirmed(`Got it. We\u2019ll notify ${email} at launch.`);
+        setEmail("");
+      } else {
+        setConfirmed("Something went wrong. Please try again.");
+      }
+    } catch {
+      setConfirmed("Network error. Please try again.");
+    }
+
+    setSubmitting(false);
   }
 
   return (
@@ -24,6 +43,7 @@ export default function EmailCapture() {
         <form className="email-form" onSubmit={handleSubmit}>
           <input
             type="email"
+            name="email"
             className="email-input"
             placeholder="you@example.com"
             required
@@ -31,8 +51,8 @@ export default function EmailCapture() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <button type="submit" className="btn-primary">
-            Notify Me
+          <button type="submit" className="btn-primary" disabled={submitting}>
+            {submitting ? "Sending..." : "Notify Me"}
           </button>
         </form>
         {confirmed && (
